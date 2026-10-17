@@ -1,0 +1,56 @@
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- Brand -->
+    <a routerLink="/" class="brand" aria-label="DiseaseSense Home">
+      <img
+        src="assets/images/logo.png"
+        alt="DiseaseSense Logo"
+        class="brand-logo"
+      />
+    </a>
+
+    <!-- Navigation -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+
+      <a href="/#features">Features</a>
+      <a href="/#outbreaks">Area Outbreaks</a>
+    </nav>
+
+    <!-- Authentication buttons -->
+    <div class="header-actions">
+      <ng-container *ngIf="user; else guestActions">
+        <span class="welcome-user">
+          Hi, {{ user.name }}
+        </span>
+
+        <button
+          type="button"
+          class="btn btn-outline logout-btn"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </ng-container>
+
+      <ng-template #guestActions>
+        <a routerLink="/login" class="btn btn-outline">
+          Sign In
+        </a>
+
+        <a routerLink="/register" class="btn btn-primary">
+          Sign Up
+        </a>
+      </ng-template>
+    </div>
+
+  </div>
+</header>

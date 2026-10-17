@@ -1,0 +1,221 @@
+
+/* =====================================
+   DiseaseSense - Global Theme
+===================================== */
+
+:root {
+  /* Brand colors */
+  --primary: #00bed4;
+  --primary-hover: #00a9bf;
+  --primary-light: #e6fafd;
+
+  /* Backgrounds */
+  --background: #ffffff;
+  --surface: #ffffff;
+  --section-background: #f0f1f3;
+
+  /* Text colors */
+  --text-primary: #172b45;
+  --text-secondary: #64748b;
+
+  /* Borders and status colors */
+  --border: #d8e5eb;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #f04455;
+
+  /* Typography */
+  --font-family: Arial, Helvetica, sans-serif;
+
+  /* Layout */
+  --container-width: 1120px;
+  --header-height: 68px;
+
+  /* Radius and shadows */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 8px rgba(23, 43, 69, 0.05);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding-top: 84px;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--background);
+}
+/* body {
+  margin: 0;
+  padding-top: 84px;
+} */
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+/* Reusable container */
+.container {
+  width: min(100% - 40px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* Reusable buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn-outline {
+  color: var(--text-primary);
+  background: #ffffff;
+  border-color: var(--border);
+}
+
+/* Reusable cards */
+.card {
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Common text utilities */
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.section-background {
+  background: var(--section-background);
+}
+
+/* Responsive container spacing */
+@media (max-width: 600px) {
+  .container {
+    width: calc(100% - 32px);
+  }
+}
+@media (max-width: 700px) {
+  body {
+    padding-top: 72px;
+  }
+}
+
+/* =====================================
+   Visible Moving Balls Background
+===================================== */
+
+body {
+  background-color: #ffffff;
+
+  background-image:
+    radial-gradient(circle, rgba(0, 190, 212, 0.20) 0 22px, transparent 24px),
+    radial-gradient(circle, rgba(91, 192, 235, 0.18) 0 14px, transparent 16px),
+    radial-gradient(circle, rgba(0, 190, 212, 0.13) 0 32px, transparent 34px),
+    radial-gradient(circle, rgba(102, 204, 220, 0.20) 0 10px, transparent 12px);
+
+  background-size:
+    430px 430px,
+    350px 350px,
+    570px 570px,
+    290px 290px;
+
+  background-position:
+    0 0,
+    100px 80px,
+    220px 120px,
+    60px 250px;
+
+  background-repeat: repeat;
+  animation: movingBalls 22s linear infinite;
+}
+
+@keyframes movingBalls {
+  0% {
+    background-position:
+      0 0,
+      100px 80px,
+      220px 120px,
+      60px 250px;
+  }
+
+  50% {
+    background-position:
+      100px 150px,
+      -40px 180px,
+      100px -40px,
+      180px 100px;
+  }
+
+  100% {
+    background-position:
+      0 430px,
+      100px 430px,
+      220px 690px,
+      60px 540px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+  }
+}

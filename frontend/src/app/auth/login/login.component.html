@@ -1,0 +1,56 @@
+
+<div class="auth-page">
+  <section class="auth-card">
+    <h1>Welcome Back</h1>
+
+    <p class="auth-description">
+      Sign in to continue to DiseaseSense.
+    </p>
+
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+      <label for="email">Email Address</label>
+
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        [(ngModel)]="email"
+        required
+        email
+      />
+
+      <label for="password">Password</label>
+
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Enter your password"
+        autocomplete="current-password"
+        [(ngModel)]="password"
+        required
+      />
+
+      <p *ngIf="errorMessage" class="auth-error">
+        {{ errorMessage }}
+      </p>
+
+      <button
+      type="submit"
+      class="btn btn-primary auth-submit"
+      [disabled]="loading"
+    >
+      {{ loading ? 'Signing In...' : 'Sign In' }}
+    </button>
+    </form>
+
+    <p class="auth-switch">
+      Don't have an account?
+      <a routerLink="/register">Create account</a>
+    </p>
+
+    <a routerLink="/" class="back-home">← Back to Home</a>
+  </section>
+</div>

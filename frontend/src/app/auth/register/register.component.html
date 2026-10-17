@@ -1,0 +1,125 @@
+
+<div class="auth-page">
+  <section class="auth-card">
+    <h1>Create Account</h1>
+    <p class="auth-description">
+      Join DiseaseSense to explore disease monitoring tools.
+    </p>
+
+    <form #registerForm="ngForm" (ngSubmit)="onRegister()">
+
+      <label for="full_name">Full Name</label>
+      <input
+        id="full_name"
+        name="full_name"
+        type="text"
+        placeholder="Enter your full name"
+        autocomplete="name"
+        [(ngModel)]="formData.full_name"
+        required
+      />
+
+      <label for="email">Email Address</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        autocomplete="email"
+        [(ngModel)]="formData.email"
+        required
+        email
+      />
+
+      <label for="phone">Phone Number</label>
+      <input
+        id="phone"
+        name="phone"
+        type="tel"
+        placeholder="Enter your phone number"
+        autocomplete="tel"
+        [(ngModel)]="formData.phone"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        placeholder="Create a password"
+        autocomplete="new-password"
+        [(ngModel)]="formData.password"
+        minlength="8"
+        required
+      />
+
+      <label for="gender">Gender</label>
+      <select
+        id="gender"
+        name="gender"
+        [(ngModel)]="formData.gender"
+        required
+      >
+        <option value="" disabled>Select gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="age">Age</label>
+      <input
+        id="age"
+        name="age"
+        type="number"
+        placeholder="Enter your age"
+        [(ngModel)]="formData.age"
+        min="1"
+        required
+      />
+
+      <label for="state">State</label>
+      <input
+        id="state"
+        name="state"
+        type="text"
+        placeholder="Enter your state"
+        [(ngModel)]="formData.state"
+        required
+      />
+
+      <label for="city">City</label>
+      <input
+        id="city"
+        name="city"
+        type="text"
+        placeholder="Enter your city"
+        [(ngModel)]="formData.city"
+        required
+      />
+
+      <p *ngIf="errorMessage" class="auth-error">
+        {{ errorMessage }}
+      </p>
+
+      <p *ngIf="successMessage" class="auth-success">
+        {{ successMessage }}
+      </p>
+
+      <button
+        type="submit"
+        class="btn btn-primary auth-submit"
+        [disabled]="loading || registerForm.invalid"
+      >
+        {{ loading ? 'Creating Account...' : 'Create Account' }}
+      </button>
+    </form>
+
+    <p class="auth-switch">
+      Already have an account?
+      <a routerLink="/login">Sign in</a>
+    </p>
+
+    <a routerLink="/" class="back-home">← Back to Home</a>
+  </section>
+</div>
