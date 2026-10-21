@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
+import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,20 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class Home {
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  startScreening() {
+    if (this.authService.isLoggedIn()) {
+      this.router.navigate(['/screening']);
+    } else {
+      this.router.navigate(['/register']);
+    }
+  }
+
   features = [
     {
       icon: 'ϟ',

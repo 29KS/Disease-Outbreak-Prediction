@@ -24,6 +24,13 @@ export const routes: Routes = [
       )
   },
   {
+    path: 'screening',
+    loadComponent: () =>
+      import('./screening/screening.component').then(
+        m => m.ScreeningComponent
+      )
+  },
+  {
     path: '**',
     redirectTo: ''
   }

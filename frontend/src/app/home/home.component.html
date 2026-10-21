@@ -1,56 +1,60 @@
+
 <!-- <app-header /> -->
 
 <main>
   <!-- Hero -->
-
   <section class="hero" id="home">
     <div class="container hero-grid">
-  
+
       <!-- Left Content -->
       <div class="hero-content">
         <span class="eyebrow">
           <span class="eyebrow-dot"></span>
           EARLY DISEASE PREDICTION SYSTEM
         </span>
-  
+
         <h1>
           Know it <em>before</em> it spreads.
         </h1>
-  
+
         <p class="hero-description">
           Your symptoms, your location and live weather insights —
           combined to predict disease risk early and help protect
           your whole neighbourhood.
         </p>
-  
+
         <div class="hero-actions">
-          <a routerLink="/register" class="btn btn-primary">
+          <a
+            href="#"
+            class="btn btn-primary"
+            (click)="$event.preventDefault(); startScreening()"
+          >
             Start screening <span class="arrow">→</span>
           </a>
-  
+
           <a href="#outbreaks" class="btn btn-outline">
             View area outbreaks
           </a>
         </div>
-  
+
         <div class="stats">
           <div class="stat-item">
             <strong>7+</strong>
             <span>Diseases tracked</span>
           </div>
-  
+
           <div class="stat-item">
             <strong>Live</strong>
             <span>Weather data</span>
           </div>
-  
+
           <div class="stat-item">
             <strong>24/7</strong>
             <span>Area alerts</span>
           </div>
         </div>
       </div>
-  
+
       <!-- Right Visual -->
       <div class="hero-visual">
         <div class="hero-image">
@@ -59,375 +63,373 @@
             alt="Disease risk map showing regional health hotspots"
           />
         </div>
-  
-       
-<!-- Floating Email and SMS Alerts -->
-<div class="hero-alerts">
 
-  <!-- Email alert -->
-  <article class="alert-card email-card">
-    <span class="alert-icon email" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="1.8"
-        stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="m3 7 9 6 9-6" />
-      </svg>
-    </span>
+        <!-- Floating Email and SMS Alerts -->
+        <div class="hero-alerts">
 
-    <div class="alert-content">
-      <h4 class="alert-title">Email · DiseaseSense Alerts</h4>
-      <p class="alert-message">
-        <span class="warning-symbol">⚠</span>
-        Dengue cases rising in Delhi (4 this week).
-        Use repellent and remove standing water.
-      </p>
+          <!-- Email alert -->
+          <article class="alert-card email-card">
+            <span class="alert-icon email" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </span>
+
+            <div class="alert-content">
+              <h4 class="alert-title">Email · DiseaseSense Alerts</h4>
+              <p class="alert-message">
+                <span class="warning-symbol">⚠</span>
+                Dengue cases rising in Delhi (4 this week).
+                Use repellent and remove standing water.
+              </p>
+            </div>
+          </article>
+
+          <!-- SMS alert -->
+          <article class="alert-card sms-card">
+            <span class="alert-icon sms" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
+                  8.5 8.5 0 0 1-7.6 4.7
+                  8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
+                  a8.4 8.4 0 0 1-.9-3.8
+                  8.5 8.5 0 0 1 4.7-7.6
+                  8.4 8.4 0 0 1 3.8-.9h.5
+                  a8.5 8.5 0 0 1 8 8v.5Z" />
+              </svg>
+            </span>
+
+            <div class="alert-content">
+              <h4 class="alert-title">SMS · +91 98•• • • •210</h4>
+              <p class="alert-message">
+                DiseaseSense: Malaria alert in Mumbai.
+                Sleep under nets, get tested if feverish.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </div>
-  </article>
+  </section>
 
-  <!-- SMS alert -->
-  <article class="alert-card sms-card">
-    <span class="alert-icon sms" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="1.8"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8
-          8.5 8.5 0 0 1-7.6 4.7
-          8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7
-          a8.4 8.4 0 0 1-.9-3.8
-          8.5 8.5 0 0 1 4.7-7.6
-          8.4 8.4 0 0 1 3.8-.9h.5
-          a8.5 8.5 0 0 1 8 8v.5Z" />
-      </svg>
-    </span>
+  <!-- How It Works -->
+  <section class="how-section" id="how-it-works">
+    <div class="container">
 
-    <div class="alert-content">
-      <h4 class="alert-title">SMS · +91 98•• • • •210</h4>
-      <p class="alert-message">
-        DiseaseSense: Malaria alert in Mumbai.
-        Sleep under nets, get tested if feverish.
-      </p>
-    </div>
-  </article>
+      <div class="how-heading">
+        <span class="section-eyebrow">THE PROCESS</span>
+        <h2>How it <span>works</span></h2>
+        <p>Six simple steps towards smarter disease monitoring.</p>
+      </div>
 
-</div>
-</div>
-</div>
-</section>
+      <div class="steps-grid">
 
-  <!-- How it works -->
-  
-<!-- How It Works -->
-<section class="how-section" id="how-it-works">
-  <div class="container">
-
-    <div class="how-heading">
-      <span class="section-eyebrow">THE PROCESS</span>
-      <h2>How it <span>works</span></h2>
-      <p>Six simple steps towards smarter disease monitoring.</p>
-    </div>
-
-    <div class="steps-grid">
-
-      <!-- Step 1 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 4v5a6 6 0 0 0 12 0V4"/>
-              <path d="M4 4h4v4H4zM16 4h4v4h-4z"/>
-              <path d="M12 15v3a3 3 0 0 0 6 0v-1"/>
-              <circle cx="18" cy="15" r="1"/>
-            </svg>
+        <!-- Step 1 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M6 4v5a6 6 0 0 0 12 0V4"/>
+                <path d="M4 4h4v4H4zM16 4h4v4h-4z"/>
+                <path d="M12 15v3a3 3 0 0 0 6 0v-1"/>
+                <circle cx="18" cy="15" r="1"/>
+              </svg>
+            </div>
+            <span class="step-number">01</span>
           </div>
-          <span class="step-number">01</span>
-        </div>
 
-        <h3>Enter symptoms</h3>
-        <p>Choose your symptoms through a simple, guided screening form.</p>
-      </article>
-
-      <!-- Step 2 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
-              <circle cx="12" cy="10" r="2.5"/>
-            </svg>
-          </div>
-          <span class="step-number">02</span>
-        </div>
-
-        <h3>Share location</h3>
-        <p>Use your location to understand disease activity in your area.</p>
-      </article>
-
-      <!-- Step 3 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/>
-              <path d="M16 16a6 6 0 0 1-10-4"/>
-            </svg>
-          </div>
-          <span class="step-number">03</span>
-        </div>
-
-        <h3>Weather insights</h3>
-        <p>Combine temperature, humidity and rainfall data where available.</p>
-      </article>
-
-      <!-- Step 4 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
-              <path d="m9 12 2 2 4-4"/>
-            </svg>
-          </div>
-          <span class="step-number">04</span>
-        </div>
-
-        <h3>Prediction and care</h3>
-        <p>Review potential disease predictions and relevant next-step guidance.</p>
-      </article>
-
-      <!-- Step 5 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="9"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="12" cy="12" r="1.5"/>
-              <path d="m16 8 4-4"/>
-            </svg>
-          </div>
-          <span class="step-number">05</span>
-        </div>
-
-        <h3>Area outbreaks</h3>
-        <p>Explore regional disease trends and available outbreak information.</p>
-      </article>
-
-      <!-- Step 6 -->
-      <article class="step-card">
-        <div class="step-top">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.8" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
-              <path d="M10 21h4"/>
-              <path d="M19 3l2 2M5 3 3 5"/>
-            </svg>
-          </div>
-          <span class="step-number">06</span>
-        </div>
-
-        <h3>Smart alerts</h3>
-        <p>Receive relevant notifications when alert functionality is available.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Features -->
-<section class="features-section" id="features">
-  <div class="container">
-    <div class="section-heading">
-      <h2>Powerful Features for Disease Detection</h2>
-      <p>
-        Everything you need to understand and predict disease
-        outbreaks in real time.
-      </p>
-    </div>
-
-    <div class="features-grid">
-      @for (feature of features; track feature.title) {
-        <article class="feature-card">
-          <div class="feature-icon">{{ feature.icon }}</div>
-          <h3>{{ feature.title }}</h3>
-          <p>{{ feature.description }}</p>
+          <h3>Enter symptoms</h3>
+          <p>Choose your symptoms through a simple, guided screening form.</p>
         </article>
-      }
+
+        <!-- Step 2 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+                <circle cx="12" cy="10" r="2.5"/>
+              </svg>
+            </div>
+            <span class="step-number">02</span>
+          </div>
+
+          <h3>Share location</h3>
+          <p>Use your location to understand disease activity in your area.</p>
+        </article>
+
+        <!-- Step 3 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4"/>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l-1.42 1.42M17.65 6.35l1.42-1.42"/>
+                <path d="M16 16a6 6 0 0 1-10-4"/>
+              </svg>
+            </div>
+            <span class="step-number">03</span>
+          </div>
+
+          <h3>Weather insights</h3>
+          <p>Combine temperature, humidity and rainfall data where available.</p>
+        </article>
+
+        <!-- Step 4 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <span class="step-number">04</span>
+          </div>
+
+          <h3>Prediction and care</h3>
+          <p>Review potential disease predictions and relevant next-step guidance.</p>
+        </article>
+
+        <!-- Step 5 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="12" cy="12" r="1.5"/>
+                <path d="m16 8 4-4"/>
+              </svg>
+            </div>
+            <span class="step-number">05</span>
+          </div>
+
+          <h3>Area outbreaks</h3>
+          <p>Explore regional disease trends and available outbreak information.</p>
+        </article>
+
+        <!-- Step 6 -->
+        <article class="step-card">
+          <div class="step-top">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                <path d="M10 21h4"/>
+                <path d="M19 3l2 2M5 3 3 5"/>
+              </svg>
+            </div>
+            <span class="step-number">06</span>
+          </div>
+
+          <h3>Smart alerts</h3>
+          <p>Receive relevant notifications when alert functionality is available.</p>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  
-<!-- Community Alerts -->
-<section class="community-section" id="outbreaks">
-  <div class="container">
-
-    <!-- Alerts introduction and previews -->
-    <div class="community-grid">
-
-      <div class="community-content">
-        <span class="community-eyebrow">COMMUNITY PROTECTION</span>
-
-        <h2>
-          One prediction can
-          <span>warn everyone nearby.</span>
-        </h2>
-
+  <!-- Features -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Powerful Features for Disease Detection</h2>
         <p>
-          When disease activity increases in an area, timely information
-          can help people stay aware and take precautions early.
-          DiseaseSense brings regional health insights together in one place.
+          Everything you need to understand and predict disease
+          outbreaks in real time.
         </p>
-
-        <a routerLink="/register" class="community-button">
-          Join & Get Alerts <span aria-hidden="true">→</span>
-        </a>
       </div>
 
-      <div class="alert-notifications">
+      <div class="features-grid">
+        @for (feature of features; track feature.title) {
+          <article class="feature-card">
+            <div class="feature-icon">{{ feature.icon }}</div>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
 
-        <!-- Email alert -->
-        <article class="alert-card">
-          <span class="alert-icon email" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="m3 7 9 6 9-6" />
-            </svg>
+  <!-- Community Alerts -->
+  <section class="community-section" id="outbreaks">
+    <div class="container">
+
+      <!-- Alerts introduction and previews -->
+      <div class="community-grid">
+
+        <div class="community-content">
+          <span class="community-eyebrow">COMMUNITY PROTECTION</span>
+
+          <h2>
+            One prediction can
+            <span>warn everyone nearby.</span>
+          </h2>
+
+          <p>
+            When disease activity increases in an area, timely information
+            can help people stay aware and take precautions early.
+            DiseaseSense brings regional health insights together in one place.
+          </p>
+
+          <a routerLink="/register" class="community-button">
+            Join & Get Alerts <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="alert-notifications">
+
+          <!-- Email alert -->
+          <article class="alert-card">
+            <span class="alert-icon email" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </span>
+
+            <div class="alert-content">
+              <h4 class="alert-title">Email · DiseaseSense Alerts</h4>
+              <p class="alert-message">
+                ⚠ Dengue cases rising in Delhi (4 this week).
+                Use repellent and remove standing water.
+              </p>
+            </div>
+          </article>
+
+          <!-- SMS alert -->
+          <article class="alert-card">
+            <span class="alert-icon sms" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
+              </svg>
+            </span>
+
+            <div class="alert-content">
+              <h4 class="alert-title">SMS · +91 98•• • • •210</h4>
+              <p class="alert-message">
+                DiseaseSense: Malaria alert in Mumbai.
+                Sleep under nets, get tested if feverish.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Frequently Asked Questions -->
+      <div class="faq-section">
+        <div class="faq-heading">
+          <span class="community-eyebrow">GOOD TO KNOW</span>
+          <h2>Questions, <span>answered.</span></h2>
+          <p>Some quick answers to help you get started.</p>
+        </div>
+
+        <div class="faq-list">
+
+          <details class="faq-item">
+            <summary>
+              <span>Is DiseaseSense a medical diagnosis?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              No. DiseaseSense is designed to provide disease-risk insights
+              and general awareness. It does not replace a doctor's diagnosis
+              or professional medical advice.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>Why might location be useful?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Location can help show relevant regional health information.
+              Share it only when needed, and review the app's privacy
+              information to understand how your data is handled.
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>When will I receive alerts?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Alerts depend on the monitoring and notification features
+              available in the application. This preview does not mean that
+              email or SMS notifications are already enabled.
+            </div>
+          </details>
+
+        </div>
+      </div>
+
+      <!-- Screening call to action -->
+      <div class="screening-cta">
+        <div class="cta-decoration cta-decoration-one"></div>
+        <div class="cta-decoration cta-decoration-two"></div>
+
+        <div class="screening-cta-content">
+          <span class="cta-eyebrow">YOUR HEALTH, YOUR AWARENESS</span>
+
+          <h2>Feeling unwell? Start with a simple check.</h2>
+
+          <p>
+            Explore symptom screening and take an informed next step.
+          </p>
+
+          <a
+            href="#"
+            class="screening-button"
+            (click)="$event.preventDefault(); startScreening()"
+          >
+            Start screening <span aria-hidden="true">→</span>
+          </a>
+
+          <span class="cta-disclaimer">
+            For awareness only · Not a substitute for medical advice
           </span>
-      
-          <div class="alert-content">
-            <h4 class="alert-title">Email · DiseaseSense Alerts</h4>
-            <p class="alert-message">
-              ⚠ Dengue cases rising in Delhi (4 this week).
-              Use repellent and remove standing water.
-            </p>
-          </div>
-        </article>
-      
-        <!-- SMS alert -->
-        <article class="alert-card">
-          <span class="alert-icon sms" aria-hidden="true">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z" />
-            </svg>
-          </span>
-      
-          <div class="alert-content">
-            <h4 class="alert-title">SMS · +91 98•• • • •210</h4>
-            <p class="alert-message">
-              DiseaseSense: Malaria alert in Mumbai.
-              Sleep under nets, get tested if feverish.
-            </p>
-          </div>
-        </article>
-      
+        </div>
       </div>
+
     </div>
-
-    <!-- Frequently Asked Questions -->
-    <div class="faq-section">
-      <div class="faq-heading">
-        <span class="community-eyebrow">GOOD TO KNOW</span>
-        <h2>Questions, <span>answered.</span></h2>
-        <p>Some quick answers to help you get started.</p>
-      </div>
-
-      <div class="faq-list">
-
-        <details class="faq-item">
-          <summary>
-            <span>Is DiseaseSense a medical diagnosis?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-answer">
-            No. DiseaseSense is designed to provide disease-risk insights
-            and general awareness. It does not replace a doctor's diagnosis
-            or professional medical advice.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>Why might location be useful?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-answer">
-            Location can help show relevant regional health information.
-            Share it only when needed, and review the app's privacy
-            information to understand how your data is handled.
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>When will I receive alerts?</span>
-            <span class="faq-toggle" aria-hidden="true"></span>
-          </summary>
-          <div class="faq-answer">
-            Alerts depend on the monitoring and notification features
-            available in the application. This preview does not mean that
-            email or SMS notifications are already enabled.
-          </div>
-        </details>
-
-      </div>
-    </div>
-
-    <!-- Screening call to action -->
-    <div class="screening-cta">
-      <div class="cta-decoration cta-decoration-one"></div>
-      <div class="cta-decoration cta-decoration-two"></div>
-
-      <div class="screening-cta-content">
-        <span class="cta-eyebrow">YOUR HEALTH, YOUR AWARENESS</span>
-
-        <h2>Feeling unwell? Start with a simple check.</h2>
-
-        <p>
-          Explore symptom screening and take an informed next step.
-        </p>
-
-        <a routerLink="/register" class="screening-button">
-          Start screening <span aria-hidden="true">→</span>
-        </a>
-
-        <span class="cta-disclaimer">
-          For awareness only · Not a substitute for medical advice
-        </span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+  </section>
 </main>
 
 <!-- <app-footer /> -->

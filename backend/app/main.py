@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.routes.auth import router as auth_router
+from app.routes.disease import router as disease_router
 
 app = FastAPI(
     title="Early Disease Outbreak Detection API",
@@ -16,6 +17,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 app.include_router(auth_router)
+app.include_router(disease_router)
 
 
 @app.get("/")

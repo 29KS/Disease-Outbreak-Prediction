@@ -1,0 +1,58 @@
+
+<div class="screening-container">
+  <div class="screening-card">
+    <h1>Symptom Screening</h1>
+    <p class="subtitle">
+      Select the symptoms you are experiencing to get an ML-based prediction.
+    </p>
+
+    <form (ngSubmit)="predictDisease()">
+      <label class="section-label">Select your symptoms</label>
+
+      <div class="symptoms-grid">
+        <label
+          class="symptom-option"
+          *ngFor="let symptom of symptoms"
+        >
+          <input
+            type="checkbox"
+            [checked]="selectedSymptoms.includes(symptom)"
+            (change)="toggleSymptom(symptom, $any($event.target).checked)"
+          />
+          <span>{{ symptom.replaceAll('_', ' ') }}</span>
+        </label>
+      </div>
+
+      <p class="selected-count">
+        Selected symptoms: {{ selectedSymptoms.length }}
+      </p>
+
+      <p class="error-message" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
+
+      <button
+        type="submit"
+        [disabled]="loading"
+        class="submit-button"
+      >
+        {{ loading ? 'Analyzing...' : 'Predict Disease' }}
+      </button>
+    </form>
+
+    <div class="result-card" *ngIf="predictedDisease">
+      <h2>Prediction Result</h2>
+      <p>
+        <strong>Predicted disease:</strong>
+        {{ predictedDisease.replaceAll('_', ' ') }}
+      </p>
+      <p *ngIf="confidence !== null">
+        <strong>Model confidence:</strong> {{ confidence }}%
+      </p>
+      <p class="disclaimer">
+        This result is an ML-based estimate, not a medical diagnosis.
+        Please consult a qualified healthcare professional for medical advice.
+      </p>
+    </div>
+  </div>
+</div>

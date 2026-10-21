@@ -40,7 +40,7 @@ export class LoginComponent {
       next: (response) => {
         this.loading = false;
         console.log('Login response:', response);
-        this.router.navigate(['/']);
+        this.router.navigate(['/screening']);
       },
       error: (error) => {
         this.loading = false;
